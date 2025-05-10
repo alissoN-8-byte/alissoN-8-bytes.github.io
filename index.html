@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Seguridad y Salud en el Trabajo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilos CSS aquí */
+        header {
+            background-color: #3b82f6; /* Azul de Tailwind 600 */
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: bold;  /* font-bold */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        header p {
+            font-size: 1.5rem; /* text-2xl */
+        }
+        header a {
+            margin-top: 1.5rem; /* mt-6 */
+            display: inline-block;
+            background-color: #f59e0b; /* Amarillo de Tailwind 500 */
+            color: #1e40af;       /* Azul de Tailwind 800 */
+            padding: 0.75rem 2rem; /* py-3 px-8 */
+            border-radius: 1rem;    /* rounded-full */
+            transition-duration: 0.3s; /* duration-300 */
+            font-weight: 600;     /* font-semibold */
+        }
+        header a:hover {
+            background-color: #d97706; /* Amarillo de Tailwind 600 */
+        }
+
+        section {
+            padding: 5rem 0;      /* py-20 */
+            background-color: #f3f4f6;  /* gray-100 */
+        }
+        #acerca-de {
+             background-color: #f3f4f6;
+        }
+
+        .container {
+            max-width: 1024px;  /* mx-auto y px-4 implícito */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-col {
+            flex-direction: column;
+        }
+        .md\:flex-row {
+            @media (min-width: 768px) {
+                flex-direction: row;
+            }
+        }
+        .items-center {
+            align-items: center;
+        }
+        .gap-10 {
+            gap: 2.5rem;        /* gap-10 */
+        }
+        .md\:w-1\/3 {
+            @media (min-width: 768px) {
+                width: 33.33333%; /* w-1/3 */
+            }
+        }
+        .rounded-full {
+            border-radius: 9999px;
+        }
+        .shadow-lg {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+        .md\:w-2\/3 {
+            @media (min-width: 768px) {
+                width: 66.66666%; /* w-2/3 */
+            }
+        }
+        .text-3xl {
+            font-size: 1.875rem;    /* text-3xl */
+            line-height: 2.25rem;
+        }
+        .font-semibold {
+            font-weight: 600;      /* font-semibold */
+        }
+        .text-blue-700 {
+            color: #1d4ed8;      /* text-blue-700 */
+        }
+        .mb-4 {
+            margin-bottom: 1rem;    /* mb-4 */
+        }
+        .text-gray-700 {
+            color: #4b5563;      /* text-gray-700 */
+        }
+        .text-lg {
+            font-size: 1.125rem;    /* text-lg */
+            line-height: 1.75rem;
+        }
+        .mt-4 {
+            margin-top: 1rem;      /* mt-4 */
+        }
+
+        #proyectos {
+            background-color: #eff6ff; /* bg-blue-100 */
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mb-12 {
+            margin-bottom: 3rem;    /* mb-12 */
+        }
+        .grid {
+            display: grid;
+        }
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+        .md\:grid-cols-3 {
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+        .gap-10 {
+            gap: 2.5rem;        /* gap-10 */
+        }
+        .bg-white {
+            background-color: white;
+        }
+        .rounded-lg {
+            border-radius: 0.5rem;  /* rounded-lg */
+        }
+        .shadow-md {
+           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .overflow-hidden {
+            overflow: hidden;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .p-6 {
+            padding: 1.5rem;      /* p-6 */
+        }
+        .text-xl {
+             font-size: 1.25rem;    /* text-xl */
+             line-height: 1.75rem;
+        }
+        .text-blue-600{
+            color: #2563eb;
+        }
+        .mb-2 {
+            margin-bottom: 0.5rem;  /* mb-2 */
+        }
+
+        .list-disc {
+            list-style-type: disc;
+        }
+        .list-inside {
+            list-style-position: inside;
+        }
+
+        #contacto {
+            background-color: #3b82f6; /* bg-blue-600 */
+        }
+        #contacto a{
+            color: #fef08a;
+        }
+        #contacto a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #374151;  /* bg-gray-800 */
+            color: white;
+            padding: 1rem 0;      /* py-4 */
+            text-align: center;
+        }
+
+        /* Nuevos estilos para imágenes dinámicas */
+        .dynamic-image {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .dynamic-image:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white py-16 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-4">Hola, soy Alisson Domelin</h1>
+            <p class="text-2xl">Profesional de seguridad y salud en el trabajo</p>
+            <a href="#acerca-de" class="mt-6 inline-block bg-yellow-500 text-blue-600 py-3 px-8 rounded-full hover:bg-yellow-600 transition duration-300 font-semibold">Conóceme</a>
+        </div>
+    </header>
+
+    <section id="acerca-de" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/3">
+                <img src="https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Alisson Domelin" class="rounded-full shadow-lg dynamic-image">
+            </div>
+            <div class="md:w-2/3">
+                <h2 class="text-3xl font-semibold text-blue-700 mb-4">Acerca de Mí</h2>
+                <p class="text-gray-700 text-lg">
+                    Soy una apasionada profesional en Seguridad y Salud en el Trabajo con experiencia en capacitaciones y apoyo en SST. Mi objetivo es crear entornos de trabajo seguros y saludables para todos los empleados. Tengo un fuerte conocimiento de las normativas y mejores prácticas en prevención de riesgos laborales. Me destaco por mi capacidad para la evaluación de riesgos, diseño de planes de emergencia, etc.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="bg-blue-100 py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-blue-700 mb-12 text-center">Mis Proyectos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.pexels.com/photos/4056885/pexels-photo-4056885.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Proyecto 1" class="w-full dynamic-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Proyecto de Seguridad en la Industria</h3>
+                        <p class="text-gray-700 mb-4">Descripción del proyecto: Implementación de un sistema de gestión de seguridad basado en la norma ISO 45001, logrando una reducción del 20% en la tasa de accidentes laborales.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.pexels.com/photos/668211/pexels-photo-668211.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Proyecto 2" class="w-full dynamic-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Desarrollo de Programa de Capacitación</h3>
+                        <p class="text-gray-700 mb-4">Descripción del proyecto: Diseño e implementación de un programa de capacitación integral en seguridad para empleados de nuevo ingreso, mejorando el conocimiento en prevención de riesgos.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.pexels.com/photos/6231962/pexels-photo-6231962.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Proyecto 3" class="w-full dynamic-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Auditoría de Seguridad y Salud</h3>
+                        <p class="text-gray-700 mb-4">Descripción del proyecto: Realización de auditorías internas de seguridad y salud ocupacional, identificando áreas de mejora y proponiendo soluciones efectivas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-semibold text-blue-700 mb-12 text-center">Mis Habilidades</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <ul class="list-disc list-inside text-lg text-gray-700">
+                    <li>Evaluación de Riesgos Laborales</li>
+                    <li>Diseño e Implementación de Planes de Emergencia</li>
+                    <li>Normativa en Seguridad y Salud en el Trabajo (ISO 45001, etc.)</li>
+                    <li>Investigación de Accidentes e Incidentes</li>
+                    <li>Capacitación y Formación en Prevención de Riesgos</li>
+                    <li>Ergonomía y Psicosociología Aplicada</li>
+                    <li>Higiene Industrial</li>
+                    <li>Manejo de Sustancias Peligrosas</li>
+                    <li>Auditorías de Seguridad y Salud</li>
+                    <li>Comunicación y Liderazgo en Seguridad</li>
+                    [Agrega más habilidades relevantes]
+                </ul>
+                <ul class="list-disc list-inside text-lg text-gray-700">
+                    <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+                    <li>Software de Gestión de Seguridad y Salud [Si aplica]</li>
+                    <li>Primeros Auxilios y RCP</li>
+                    <li>Conocimiento de Equipos de Protección Personal (EPP)</li>
+                     <li>Control de Incendios</li>
+                    <li>Espacios Confinados</li>
+                    <li>Trabajo en Alturas</li>
+                    <li>Análisis de Seguridad en el Trabajo (AST)</li>
+                    <li>Permisos de Trabajo</li>
+                    <li>Metodologías de Investigación de Incidentes (5 Porqués, Ishikawa)</li>
+                    [Agrega más habilidades relevantes]
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="bg-blue-600 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-semibold mb-8">Contacto</h2>
+            <p class="text-lg mb-4">Puedes contactarme a través de:</p>
+            <p class="text-xl mb-4">Email: <a href="mailto:[Tu Correo Electrónico]" class="text-yellow-300 hover:underline">[Tu Correo Electrónico]</a></p>
+            <p class="text-xl">LinkedIn: <a href="[Tu Perfil de LinkedIn]" target="_blank" rel="noopener noreferrer" class="text-yellow-300 hover:underline">[Tu Perfil de LinkedIn]</a></p>
+             <p class="text-lg mt-8">¡Espero tener noticias tuyas!</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4 text-center">
+        <p>© [Año] [Tu Nombre]. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Aquí está el código JavaScript
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
